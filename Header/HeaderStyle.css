@@ -1,0 +1,90 @@
+ /* /* body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    background-color: dodgerblue;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 60px;
+    
+}  */
+/* header > div{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    max-width: 1024px;
+} */
+
+/* header >div >.logo{
+    flex: 1;
+    align-items: center;
+}
+header >div >.logo >span {
+    align-items: center;
+    flex: 1;
+    color: #fff;
+    font-size: 23px;
+} */
+
+/* header >div >.logo >span::after{
+    content: '';
+    height: 7px;
+    width: 7px;
+    border-radius: 5px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    top: 30px;
+} */
+
+/* 
+ul{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+} 
+
+header ul li a:hover{
+    opacity: 1;
+}   */
+
+/* .Nav-List{
+    list-style: none;
+    display: flex;
+    
+
+}
+
+.Nav-List > li{
+    margin-right: 20px;
+}
+
+.NavBar-container{
+    padding-left: 90px;
+} */
+
+/* .items{
+    color: white;
+    text-decoration: none;
+} */ 
+
+/* .navbar-link{
+    display: flex;
+    list-style: none;
+}
+
+.navbar-link > li{
+    margin-right: 10px;
+} */
+
+/* .navbar{
+    list-style: none;
+    
+}
+.navbar > Link{
+   text-decoration-line: none;
+} */
