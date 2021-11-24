@@ -13,11 +13,12 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { connect } from 'react-redux';
 import { CartContext } from '../Context/cartContext';
 
 const token = sessionStorage.getItem('token');
 
-const Header = ({ routes }) => (
+const Header = ({ routes, cart }) => (
   <AppBar position="sticky">
     <Toolbar style={{ alignItems: 'center' }}>
       <IconButton
@@ -54,23 +55,19 @@ const Header = ({ routes }) => (
       {token && (
       <>
 
-        <CartContext.Consumer>
-          {({ cart }) => (
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <Badge badgeContent={cart.reduce((p, c) => p + c.quantity, 0)} color="error">
-                <Link style={{ textDecoration: 'none', color: 'white' }} to="/cart">
-                  <ShoppingCartIcon />
-                </Link>
-              </Badge>
-            </IconButton>
-          )}
-        </CartContext.Consumer>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          sx={{ mr: 2 }}
+        >
+          <Badge badgeContent={cart.reduce((p, c) => p + c.quantity, 0)} color="error">
+            <Link style={{ textDecoration: 'none', color: 'white' }} to="/cart">
+              <ShoppingCartIcon />
+            </Link>
+          </Badge>
+        </IconButton>
 
         <IconButton
           size="large"
@@ -88,10 +85,12 @@ const Header = ({ routes }) => (
           </Link>
 
         </IconButton>
+
       </>
       )}
     </Toolbar>
   </AppBar>
 );
+const mapStateToProps = (store) => ({ cart: store.cart.data });
 
-export default Header;
+export default connect(mapStateToProps)(Header);
